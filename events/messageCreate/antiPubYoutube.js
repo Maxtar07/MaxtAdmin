@@ -7,6 +7,7 @@ const GuildInfos = require(`../../models/GuildInfos`);
  */
 module.exports = async (bot, message) => {
   if (message.author.bot) return;
+  if (message.webhookId) return;
   if (message.inGuild() === false) return;
   //antipub discord
   if ((!(message.channel.id === `726428195636903971` ||

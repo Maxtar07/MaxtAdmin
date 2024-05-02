@@ -3,6 +3,7 @@ const GuildInfos = require(`../../models/GuildInfos`);
 module.exports = async (bot, message) => {
     if (message.content.toLocaleLowerCase().includes(`399136754130485248`)) {
         if (message.author.bot) return;
+        if (message.webhookId) return;
         if (message.member.roles.cache.find(m => m.id === `844991387668709416`)) {
             return;
         } else {
